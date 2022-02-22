@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3</title>
+    <style type="text/css">
+       html {
+           font-size: 100%;
+       }
+       body {
+           font-size: 1.2rem;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
+
+       #box {
+           width: 100px;
+           height: 100px;
+           background-color: blue;
+           position: absolute;
+       }
+    </style>
+</head>
+<body>
+    <h1>REACTION GAME</h1>
+    <p>Click the shapes as quickly as you can</p>
+    <p>Your time: <strong id="time"></strong></p>
+    <div id="box"></div>
+
+    <script type="text/javascript">
+        let startTime = Date.now();
+        let box = document.getElementById("box");
+        let txt = document.getElementById("time");
+        const posMaxX = window.innerWidth / 2;
+        const posMaxY = window.innerHeight / 2;
+
+        randomizeBox();
+ 
+        box.onclick = function()
+        {
+            box.style.display = "none";
+            const endTime = Date.now();
+            const elapsedTime = (endTime - startTime);
+            setTimeout(randomizeBox, (Math.random() * 2000) + 500);
+            txt.innerHTML = elapsedTime / 1000 + " s";
+        }
+
+        function randomizeBox()
+        {
+            if (Math.random() > 0.5) {
+                box.style.borderRadius = "50%";
+            } else {
+                box.style.borderRadius = "";
+            }
+
+            box.style.top = Math.floor(Math.random() * posMaxY) + "px";
+            box.style.right = Math.floor(Math.random() * posMaxX) + "px";
+            box.style.scale = (Math.random() * 1) + 0.5;
+            box.style.backgroundColor = randomizeColor();
+            box.style.display = "block";
+
+            startTime = Date.now();
+        }
+
+        function randomizeColor() 
+        {
+            return "#" + Math.floor(Math.random()*16777215).toString(16);
+        }
+    </script>
+</body>
+</html>

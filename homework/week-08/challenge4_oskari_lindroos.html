@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+    <style type="text/css">
+       html {
+           font-size: 100%;
+       }
+
+       body, input {
+           text-align: center;
+           font-size: 1.3rem;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
+       
+       body {
+           background-color: rgb(238, 237, 237);
+       }
+
+       input {
+           width: 50px;
+       }
+       
+       .grid-container{
+           background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 100px 0;
+           text-align: center;
+           align-items: center;
+           display: grid;
+           grid-template-columns: 100px 50px 100px 5px;
+           justify-items: center;
+           grid-template-rows: auto;
+           max-width: 500px;
+           border: 2px solid rgb(185, 185, 185);
+           border-radius: 7px;
+           gap: 15px;
+           justify-content: center;
+           box-shadow: -1px 6px 15px -5px rgba(0,0,0,0.45);
+       }
+
+       .grid-container h2, #feedback {
+            grid-column: span 4;
+       }
+
+       .multiplicationsText,  #checkButton, #showButton {
+            grid-column: 1;
+       }
+
+       .inputtedNumbers, #resetButton {
+           grid-column: 3;
+       }
+       
+       .grid-container button {
+           grid-row: auto;
+           width: 100px;
+           margin-bottom: 25px;
+           width: 100px;
+           height: 50px;
+           background-color: rgb(231, 140, 4);
+           box-shadow: -1px 6px 15px -5px rgba(0,0,0,0.45);
+           border: 0;
+           border-radius: 10px;
+           color: white;
+           cursor: pointer;
+       }
+
+       .grid-container button:hover {
+           background-color: rgb(143, 105, 36);
+           transition: 0.5s;
+       }
+
+       .equals {
+            grid-column: 2;
+       }
+
+       #feedback {
+         height: 30px;
+       }
+
+       .smiley {
+           grid-column: 4;
+       }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="grid-container">
+            <h2>Multiplication Game</h2>
+            <strong class="multiplicationsText"></strong>
+            <strong class="equals">=</strong>
+            <input class="inputtedNumbers" type="text">
+            <strong class="smiley"></strong>
+
+            <strong class="multiplicationsText"></strong>
+            <strong class="equals">=</strong>
+            <input class="inputtedNumbers" type="text">
+            <strong class="smiley"></strong>
+
+            <strong class="multiplicationsText"></strong>
+            <strong class="equals">=</strong>
+            <input class="inputtedNumbers" type="text">
+            <strong class="smiley"></strong>
+
+            <p id="feedback"></p>
+            <button id="checkButton">Check</button>
+            <button id="resetButton">Reset</button>
+            <button id="showButton">Show</button>
+        </div>
+    </main>
+
+    <script>
+        const multiplications = document.getElementsByClassName('multiplicationsText');
+        const smileys = document.getElementsByClassName('smiley');
+        let userAnswers = document.getElementsByClassName('inputtedNumbers');
+        let feedbackText = document.getElementById('feedback');
+        const questionsCount = multiplications.length;
+        const correctAnswers = [];
+
+        generateMultiplications();
+
+        function generateMultiplications()
+        {
+            for (let i = 0; i < questionsCount; i++) {
+                let num1 = Math.floor(Math.random() * 10) + 1;
+                let num2 = Math.floor(Math.random() * 10) + 1;
+                multiplications[i].innerHTML = num1 + " * " + num2;
+                correctAnswers[i] = num1 * num2;
+            }
+        }
+
+        document.getElementById("checkButton").onclick = function() {
+        
+            let howManyCorrect = 0;
+            let answers = [];
+     
+            for (let i = 0; i < questionsCount; i++) {
+                answers[i] = parseInt(userAnswers[i].value);
+                if (answers[i] === correctAnswers[i]) {
+                    howManyCorrect++;
+                    smileys[i].innerHTML = ":-)";
+                    smileys[i].style.color = "green"
+                } else {
+                    smileys[i].innerHTML = ":-(";
+                    smileys[i].style.color = "red";
+                }
+            }
+
+            if (howManyCorrect === questionsCount) {
+                feedbackText.innerHTML = "All correct! Well done!"
+                feedbackText.style.color = "green";
+            } else {
+                feedbackText.innerHTML = howManyCorrect + " / " + questionsCount + ", Keep practicing!!!";
+                feedbackText.style.color = "red";
+            }
+        }
+
+        document.getElementById("resetButton").onclick = function() {
+            generateMultiplications();
+            feedbackText.innerHTML = "";
+            for (let i = 0; i < questionsCount; i++) {
+                userAnswers[i].value = '';
+                smileys[i].innerHTML = "";
+            }
+        }
+
+        document.getElementById("showButton").onclick = function() {
+            for (let i = 0; i < questionsCount; i++) {
+                userAnswers[i].value = correctAnswers[i];
+            }
+        }
+    </script>
+</body>
+</html>
