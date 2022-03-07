@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f5d4804023.js" crossorigin="anonymous"></script>
+    <style>
+       html {
+            font-size: 100%;
+        }
+        body {
+            background-color: rgb(10, 20, 29);
+            color: white;
+        }
+
+        #weatherIcon {
+            width: 200px;
+            margin: 0 auto;
+        }
+        
+        .col-centered{
+            margin: 0 auto;
+        }
+
+        .card {
+            margin-top: 5em;
+            visibility: hidden;
+            background-color: rgb(15, 30, 43);
+            width: 18rem;
+            border: 5px solid rgba(255, 255, 255, 0.438);
+            border-radius: 10%;
+        }
+
+        .card-text {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-lg-3 col-centered">
+            <p>Enter a city name to get current weather</p>
+            <div class="input-group">
+                <div class="form-outline">
+                  <input type="search" id="input" class="form-control" placeholder="Enter City Name">
+                </div>
+                <button id="searchButton" type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="card">
+                <img id="weatherIcon" class="card-img-top">
+                <div class="card-body">
+                    <h4 id="cityName" class="card-title"></h4>
+                    <p id="temp" class="card-text"></p>
+                    <p id="humidity" class="card-text"></p>
+                    <p id="windSpeed" class="card-text"></p>
+                    <p id="visibility" class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("searchButton").onclick = async function fetchWeather()
+        {
+            try {
+                const response = await fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&appid=f2494105201a794c908985d4aae1fcd7&q=" + document.getElementById("input").value);
+                const weather = await response.json();
+                console.log(weather);
+                updateHtml(weather);
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        function updateHtml(weatherData) {
+            document.getElementsByClassName("card")[0].style.visibility = "visible";
+            document.getElementById("weatherIcon").src = "http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"
+            document.getElementById("temp").innerHTML = "Temperature: " + Math.round(weatherData.main.temp) + "&#8451;";
+            document.getElementById("humidity").innerHTML = "Humidity: " + weatherData.main.humidity + "%";
+            document.getElementById("windSpeed").innerHTML = "Wind speed: " + (weatherData.wind.speed).toFixed(1) + "m/s";
+            document.getElementById("visibility").innerHTML = "Visibility: " + (weatherData.visibility / 1000).toFixed(1) + "km";
+        
+            document.getElementById("cityName").innerHTML = weatherData.name;
+        }
+    </script>
+</body>
+</html>
