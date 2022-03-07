@@ -67,7 +67,7 @@
         document.getElementById("searchButton").onclick = async function fetchWeather()
         {
             try {
-                const response = await fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&appid=f2494105201a794c908985d4aae1fcd7&q=" + document.getElementById("input").value);
+                const response = await fetch("https://api.openweathermap.org/data/2.5/weather?units=metric&appid=f2494105201a794c908985d4aae1fcd7&q=" + document.getElementById("input").value);
                 const weather = await response.json();
                 console.log(weather);
                 updateHtml(weather);
