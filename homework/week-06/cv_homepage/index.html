@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oskari Lindroos</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+        </nav>
+    </section>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <img id="avatar" src="images/avatar.png">
+            <div class="hero-text">
+                <h1>Oskari Lindroos</h1>
+                <p id="typewriter">Full Stack Web Developer, 3D modeler, musician and photographer based in Tampere, Finland.</p>
+            </div>
+            <div class="socials">
+                <ul>
+                    <li><a href="mailto:oskarilindroos00@gmail.com" class="fa fa-envelope target="_blank"></a></li>
+                    <li><a href="https://www.linkedin.com/in/oskari-lindroos/" class="fa fa-linkedin" target="_blank"></a></li>
+                    <li><a href="https://github.com/misNuu" class="fa fa-github" target="_blank"></a></li>
+                    <li><a href="https://www.instagram.com/lindroos_oskari/" class="fa fa-instagram" target="_blank"></a></li>
+                </ul>
+            </div>
+    
+            
+        </section>
+        <section id="about">
+            <div class="container">
+                <h1>About Me</h1>
+                <p>21 year old software engineering student at TAMK.</p>
+            </div>
+            
+        </section>
+        <section id="projects">
+            <div class="container">
+                <h1>Projects</h1>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.addEventListener("scroll", function() {
+            let navbar = document.querySelector("nav");
+            navbar.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+        let i = 0;
+        let txt = document.getElementById("typewriter").innerHTML;
+        let speed = 80;
+
+        document.getElementById("typewriter").innerHTML = "";
+        function typeWriter() {
+          if (i < txt.length) {
+             
+            document.getElementById("typewriter").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>
