@@ -19,12 +19,16 @@
         </nav>
     </section>
     <main>
-        <section id="hero">
+        <section id="hero" class="video-wrapper">
+            <video id="herovideo"playsinline autoplay muted loop poster="images/hero-background2.jpg">
+                <source src="images/damaskrose.mp4" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
             <div class="container">
                 <img id="avatar" src="images/avatar.png">
             <div class="hero-text">
                 <h1>Oskari Lindroos</h1>
-                <p id="typewriter">Full Stack Web Developer, 3D modeler, musician and photographer based in Tampere, Finland.</p>
+                <p id="typewriter">Full Stack Web Developer, 3D artist, musician and photographer based in Tampere, Finland.</p>
             </div>
             <div class="socials">
                 <ul>
@@ -58,7 +62,7 @@
 
         let i = 0;
         let txt = document.getElementById("typewriter").innerHTML;
-        let speed = 80;
+        let speed = 60;
 
         document.getElementById("typewriter").innerHTML = "";
         function typeWriter() {

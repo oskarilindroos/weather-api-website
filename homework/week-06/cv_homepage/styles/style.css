@@ -13,7 +13,6 @@ body {
 .hero-text h1 {
     font-size: 3.3rem;
     margin-bottom: 20px;
-    
 }
 
 .hero-text p {
@@ -34,6 +33,8 @@ a {
 }
 
 .main-nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
     position: fixed;
     width: 100%;
     display: flex;
@@ -47,7 +48,7 @@ a {
 }
 
 .main-nav a:hover {
-    color: rgb(0, 167, 153);
+    color: rgb(255, 170, 11);
 }
 
 ul {
@@ -59,10 +60,6 @@ ul {
     text-align: center;
     max-width: 1000px;
     margin: auto;
-}
-
-#hero {
-    padding-top: 200px;
 }
 
 #avatar {
@@ -82,7 +79,7 @@ ul {
 }
 
 .socials a:hover {
-    color: rgb(0, 167, 153);
+    color: rgb(255, 170, 11);
     transition: 0.2s;
 }
 
@@ -97,7 +94,15 @@ ul {
 }
 
 #hero {
-    background-image: url("../images/hero-background.jpg");
+    padding-top: 250px;
+    /*background-image: url("../images/background-video.mp4");*/
 }
 
-
+#herovideo {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
