@@ -6,75 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oskari Lindroos</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f5d4804023.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section>
         <nav class="main-nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Lindroos_Oskari_CV.pdf" target="_blank">Download CV <span class="fa fa-download"></span></a></li>
             </ul>
         </nav>
     </section>
     <main>
         <section id="hero" class="video-wrapper">
-            <video id="herovideo"playsinline autoplay muted loop poster="images/hero-background2.jpg">
-                <source src="images/damaskrose.mp4" type="video/webm">
+            <video id="herovideo"muted autoplay loop>
+                <source src="images/Hero-Video.m4v" type="video/webm">
                 Your browser does not support the video tag.
             </video>
-            <div class="container">
-                <img id="avatar" src="images/avatar.png">
-            <div class="hero-text">
-                <h1>Oskari Lindroos</h1>
-                <p id="typewriter">Full Stack Web Developer, 3D artist, musician and photographer based in Tampere, Finland.</p>
-            </div>
-            <div class="socials">
-                <ul>
-                    <li><a href="mailto:oskarilindroos00@gmail.com" class="fa fa-envelope target="_blank"></a></li>
-                    <li><a href="https://www.linkedin.com/in/oskari-lindroos/" class="fa fa-linkedin" target="_blank"></a></li>
-                    <li><a href="https://github.com/misNuu" class="fa fa-github" target="_blank"></a></li>
-                    <li><a href="https://www.instagram.com/lindroos_oskari/" class="fa fa-instagram" target="_blank"></a></li>
-                </ul>
-            </div>
-    
-            
+            <div id="herotext">
+                <img id="avatar" src="images/avatar.jpg">
+                <div class="hero-text">
+                    <h1 id="name">Oskari Lindroos</h1>
+                    <p id="typewriter">Web Developer, 3D artist, musician and photographer based in Tampere, Finland.</p>
+                </div>
+                <div class="socials">
+                    <ul>
+                        <li><a href="mailto:oskari.a.lindroos@tuni.fi" class="fa fa-envelope target="_blank"></a></li>
+                        <li><a href="https://www.linkedin.com/in/oskari-lindroos/" class="fa-brands fa-linkedin" target="_blank"></a></li>
+                        <li><a href="https://github.com/misNuu" class="fa-brands fa-github" target="_blank"></a></li>
+                        <li><a href="https://www.instagram.com/lindroos_oskari/" class="fa-brands fa-instagram" target="_blank"></a></li>
+                        <li><a href="https://www.artstation.com/misnu" class="fa-brands fa-artstation" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div> 
         </section>
-        <section id="about">
+        <a id="about"></a>
+        <section id="about" class="fadeIn">
             <div class="container">
                 <h1>About Me</h1>
-                <p>21 year old software engineering student at TAMK.</p>
+                <p>I'm a 21 year old software engineering student at TAMK.</p>
+                <p>My passion is in programming and especially in web development and design.</p>
+                <p>In my free time I like to stay creative by making music, 3d modeling and taking photos. I post a lot of my creative work on my instagram and artstation.</p>
+                <p>Currently learning music theory to make better use of my two synthesizers. I hope to publish more music soon!</p>
             </div>
-            
         </section>
-        <section id="projects">
+        <a id="skills"></a>
+        <section id="skills" class="fadeIn">
             <div class="container">
-                <h1>Projects</h1>
+                <h1>Programming Skills</h1>
+              
+                <p>HTML5</p>
+                <div class="skill-bar">
+                    <div class="skill html"></div>
+                </div>
+                <p>CSS</p>
+                <div class="skill-bar">
+                    <div class="skill css"></div>
+                </div>
+                <p>Javascript</p>
+                <div class="skill-bar">
+                    <div class="skill js"></div>
+                </div>
+                <p>C++</p>
+                <div class="skill-bar">
+                    <div class="skill cplusplus"></div>
+                </div>
+                <p>C#</p>
+                <div class="skill-bar">
+                    <div class="skill csharp"></div>
+                </div>
+
+                <h1>Software Skills</h1>
+              
+                <p>Visual Studio</p>
+                <div class="skill-bar">
+                    <div class="skill visualstudio"></div>
+                </div>
+                <p>Wordpress & WooCommerce</p>
+                <div class="skill-bar">
+                    <div class="skill wordpress"></div>
+                </div>
+                <p>Git</p>
+                <div class="skill-bar">
+                    <div class="skill git"></div>
+                </div>
+                <p>Blender</p>
+                <div class="skill-bar">
+                    <div class="skill blender"></div>
+                </div>
+                <p>Unity</p>
+                <div class="skill-bar">
+                    <div class="skill unity"></div>
+                </div>
+                <p>Adobe Creative Suite</p>
+                <div class="skill-bar">
+                    <div class="skill adobe"></div>
+                </div>
+                <p>Microsoft office</p>
+                <div class="skill-bar">
+                    <div class="skill office"></div>
+                </div>
+
+                <h1>Languages</h1>
+
+                <p>Finnish</p>
+                <div class="skill-bar">
+                    <div class="skill finnish"></div>
+                </div>
+                <p>English</p>
+                <div class="skill-bar">
+                    <div class="skill english"></div>
+                </div>
+                <p>Swedish</p>
+                <div class="skill-bar">
+                    <div class="skill swedish"></div>
+                </div>
+                <p>Japanese</p>
+                <div class="skill-bar">
+                    <div class="skill japanese"></div>
+                </div>
+            </div>
+        </section>
+        <a id="contact"></a>
+        <section id="contact" class="fadeIn">
+            <div class="container">
+                <h1>Contact Information</h1>
             </div>
         </section>
     </main>
-    <script>
-        window.addEventListener("scroll", function() {
-            let navbar = document.querySelector("nav");
-            navbar.classList.toggle("sticky", window.scrollY > 0);
-        });
-
-        let i = 0;
-        let txt = document.getElementById("typewriter").innerHTML;
-        let speed = 60;
-
-        document.getElementById("typewriter").innerHTML = "";
-        function typeWriter() {
-          if (i < txt.length) {
-             
-            document.getElementById("typewriter").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-          }
-        }
-
-        typeWriter();
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
