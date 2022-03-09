@@ -111,11 +111,10 @@ ul {
     transition: 0.2s;
 }
 
-#hero,#about,#skills,#contact {
+#hero,#about,#skills {
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size:cover;
 }
+
 
 #about {
     padding-top: 50px;
@@ -143,15 +142,13 @@ ul {
     top: 55px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    object-fit: cover;
     z-index: -1;
 }
 
 #backimage {
     z-index: -2;
-    height: auto;
-    width: 100%;
-    top: 100px;
     opacity: 0;
 }
 
