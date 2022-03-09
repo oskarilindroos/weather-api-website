@@ -5,7 +5,7 @@ window.addEventListener("scroll", () => {
 
   if (currentScroll >= threshold) {
     document.querySelector(".front").style.opacity = 0;
-    document.querySelector("#backimage").style.opacity = 1;
+    document.querySelector("#backimage").style.opacity = 0.8;
   } 
 });
 

@@ -96,15 +96,12 @@ ul {
     padding: 0;
 }
 
-
 .container {
     text-align: center;
     margin: 0 auto;
     max-width: 600px;
     line-height: 0.8cm;
 }
-
-
 
 #about img {
     width: 350px;
@@ -116,7 +113,6 @@ ul {
     border-radius: 50%;
     border: 2px solid black;
 }
-
 
 .socials {
     display: flex;
@@ -157,7 +153,6 @@ ul {
     max-width: 1000px;
     margin: 0 auto;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
-    /*background-image: url("../images/background-video.mp4");*/
 }
 
 .background-video {
@@ -167,6 +162,7 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.9;
     z-index: -1;
 }
 
@@ -178,7 +174,6 @@ ul {
 .front {
     transition: opacity 6s;
 }
-
 
 @media screen and (max-width: 650px) {
     .background-video {
