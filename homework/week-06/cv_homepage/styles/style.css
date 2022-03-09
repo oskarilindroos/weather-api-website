@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html {
     font-size: 100%;
@@ -45,12 +46,6 @@ a {
     text-decoration: none;
 }
 
-.sticky {
-	background-color: black;
-    transition: 1.5s;
-    z-index: 99;
-}
-
 .main-nav {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -61,16 +56,17 @@ a {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    background-color: black;
+    z-index: 1;
 }
 
 .main-nav li {
     display: inline;
     padding: 20px;
-
 }
 
 .main-nav a:hover {
-    color: rgb(255, 170, 11);
+    color: rgb(179, 179, 179);
 }
 
 ul {
@@ -80,22 +76,24 @@ ul {
 
 .container {
     text-align: center;
-    max-width: 1000px;
     margin: 0 auto;
     max-width: 600px;
     line-height: 0.8cm;
 }
 
 
-#herotext {
-    opacity: 1;
-    transition: opacity 5s;
+
+#about img {
+    width: 350px;
 }
+
 
 #avatar {
     width: 200px;
     border-radius: 50%;
+    border: 2px solid black;
 }
+
 
 .socials {
     display: flex;
@@ -109,7 +107,7 @@ ul {
 }
 
 .socials a:hover {
-    color: rgb(255, 170, 11);
+    color: rgb(179, 179, 179);
     transition: 0.2s;
 }
 
@@ -123,8 +121,12 @@ ul {
     padding-top: 50px;
 }
 
-#about p, #about h1{
+.text-left {
     text-align: left;
+}
+
+#synthpicture {
+    width: 500px;
 }
 
 #hero {
@@ -132,22 +134,34 @@ ul {
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
     /*background-image: url("../images/background-video.mp4");*/
 }
 
-#herovideo {
+.background-video {
     position: absolute;
     top: 55px;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -99;
+    z-index: -1;
 }
 
+#backimage {
+    z-index: -2;
+    height: auto;
+    width: 100%;
+    top: 100px;
+    opacity: 0;
+}
+
+.front {
+    transition: opacity 6s;
+}
+
+
 @media screen and (max-width: 650px) {
-    #herovideo {
+    .background-video {
         display: none;
     }
 }
@@ -163,7 +177,7 @@ ul {
 }
 
 .skill {
-    background-color: rgb(255, 166, 0);
+    background-color: rgb(253, 134, 54);
     padding-right: 10px;
     border-radius: 8px;
     height: 20px;

@@ -1,27 +1,36 @@
 //Sticky navbar on scroll
+/*
 window.addEventListener("scroll", function() {
+  const currentScroll = window.pageYOffset;
     let navbar = document.querySelector("nav");
     navbar.classList.toggle("sticky", window.scrollY > 0);
 });
-
-//Typewriter effect for element with id 'sticky'
-/*
-let i = 0;
-let txt = document.getElementById("typewriter").innerHTML;
-let speed = 60;
-
-document.getElementById("typewriter").innerHTML = "";
-function typeWriter() {
-  if (i < txt.length) {
-     
-    document.getElementById("typewriter").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-typeWriter();
 */
+/*
+const checkpoint = 200;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= checkpoint) {
+    opacity = 1 - currentScroll / checkpoint;
+    console.log(currentScroll)
+  } else {
+    opacity = 0;
+  }
+  document.querySelector(".front").style.opacity = opacity;
+});*/
+
+
+const threshold = 200;
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  console.log(currentScroll)
+  if (currentScroll >= threshold) {
+    document.querySelector(".front").style.opacity = 0;
+    document.querySelector("#backimage").style.opacity = 1;
+  } 
+});
+
 
 let elementsArray = document.querySelectorAll(".fadeIn");
 window.addEventListener('scroll', fadeIn ); 

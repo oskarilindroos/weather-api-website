@@ -21,11 +21,12 @@
         </nav>
     </section>
     <main>
-        <section id="hero" class="video-wrapper">
-            <video id="herovideo"muted autoplay loop>
+        <section id="hero">
+            <video class="background-video front" muted autoplay loop>
                 <source src="images/Hero-Video.m4v" type="video/webm">
                 Your browser does not support the video tag.
             </video>
+            <img id="backimage"  src="images/viewportrender.jpg" class="background-video">
             <div id="herotext">
                 <img id="avatar" src="images/avatar.jpg">
                 <div class="hero-text">
@@ -45,12 +46,18 @@
         </section>
         <a id="about"></a>
         <section id="about" class="fadeIn">
-            <div class="container">
+            <div class="container text-left">
                 <h1>About Me</h1>
                 <p>I'm a 21 year old software engineering student at TAMK.</p>
                 <p>My passion is in programming and especially in web development and design.</p>
                 <p>In my free time I like to stay creative by making music, 3d modeling and taking photos. I post a lot of my creative work on my instagram and artstation.</p>
-                <p>Currently learning music theory to make better use of my two synthesizers. I hope to publish more music soon!</p>
+                <p>Currently learning music theory to make better use of my two synthesizers. I hope to release more music soon!</p>
+                <!--
+                    <img class="grid-left" src="images/buildings.jpg">
+                <img class="grid-left" src="images/water.jpg">
+                <img class="grid-right" src="images/synths.jpg">
+                -->
+                
             </div>
         </section>
         <a id="skills"></a>
@@ -132,8 +139,11 @@
         </section>
         <a id="contact"></a>
         <section id="contact" class="fadeIn">
-            <div class="container">
+            <div class="container text-left">
                 <h1>Contact Information</h1>
+                <p>Email: oskari.a.lindroos@tuni.fi</p>
+                <p>Phone: 0442062908</p>
+                <p>33530 Tampere</p>
             </div>
         </section>
     </main>
