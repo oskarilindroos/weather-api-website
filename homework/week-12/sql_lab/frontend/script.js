@@ -12,12 +12,10 @@ const fetchCollectors = async() => {
 
 const populateTables = (data) => {
     const table = document.getElementById("collectors");
-
+    table.innerHTML = "";
     data.map(item => {
-        console.log(item);
         const row = document.createElement("tr");
-   
-        
+
         const idColumn = document.createElement("td");
         idColumn.className = "id-column";
         idColumn.innerHTML = '<a href="./collector.html">' + item.id + '</a>';
@@ -38,7 +36,7 @@ const populateTables = (data) => {
 
         const carColumn = document.createElement("td");
         carColumn.className = "car-column";
-        carColumn.innerHTML = item.cars.length;
+        carColumn.innerHTML = item.cars.split(" ").length;
         row.appendChild(carColumn);
 
         table.appendChild(row);

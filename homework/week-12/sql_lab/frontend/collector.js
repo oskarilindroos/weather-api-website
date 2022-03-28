@@ -10,7 +10,7 @@ const fetchCollectorDetails = async (id) => {
     try {
         const response = await fetch("http://localhost:5000/api/collectors/" + id);
         const data = await response.json();
-        populateCollector(data);
+        populateCollector(data.data);
     } catch (error) {
         console.log(error);
     }

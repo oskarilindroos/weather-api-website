@@ -37,7 +37,7 @@ app.get("/api/", (req, res) => {
     res.send("BACKEND API IS UP");
 })
 
-app.get("/api/collectors", (req, res) => {
+app.get("/api/collectors/", (req, res) => {
     res.json({ data: COLLECTORS });
 })
 
