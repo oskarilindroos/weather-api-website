@@ -36,7 +36,7 @@ const populateTables = (data) => {
 
         const carColumn = document.createElement("td");
         carColumn.className = "car-column";
-        carColumn.innerHTML = item.cars.split(" ").length;
+        carColumn.innerHTML = item.cars.split(",").length;
         row.appendChild(carColumn);
 
         table.appendChild(row);
