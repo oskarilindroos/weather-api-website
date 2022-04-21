@@ -13,9 +13,7 @@ This website fetches data from TAMK's public weather api and displays it to the 
 
 ### 04/21/2022
 
-* update readme
-* update all api requests to https
-* add readme
+* change all api requests to https
 * add loading animation
 * add variable weather data
 * update nav links
