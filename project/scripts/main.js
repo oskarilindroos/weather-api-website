@@ -88,10 +88,10 @@ const loadingAnim = document.getElementById("loading");
 const signalSelectElement = document.getElementById("signalSelect");
 const timeSpanSelectElement = document.getElementById("timespanSelect");
 
-timeSpanSelectElement.addEventListener("change", onSelect);
-signalSelectElement.addEventListener("change", onSelect);
+timeSpanSelectElement.addEventListener("change", onSelectStateChange);
+signalSelectElement.addEventListener("change", onSelectStateChange);
 
-function onSelect() {
+function onSelectStateChange() {
     fetchWeatherData(timeSpanSelectElement.value, signalSelectElement.value);
     loadingAnim.style.visibility = "visible";
 }
