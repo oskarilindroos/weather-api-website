@@ -1,6 +1,6 @@
 const fetchWeatherData = async (timeSpan, signal) => {
     try {
-        const response = await fetch(`http://webapi19sa-1.course.tamk.cloud/v1/weather/${signal}/${timeSpan}`);
+        const response = await fetch(`https://webapi19sa-1.course.tamk.cloud/v1/weather/${signal}/${timeSpan}`);
         const jsonData = await response.json();
         loadingAnim.style.visibility = "hidden";
         populateTables(jsonData, signal);

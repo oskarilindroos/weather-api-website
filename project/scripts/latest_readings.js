@@ -1,6 +1,6 @@
 const fetchWeatherData = async() => {
     try {
-        const response = await fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/limit/50");
+        const response = await fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/limit/50");
         const jsonData = await response.json();
         console.log(jsonData);
         populateTables(jsonData);
