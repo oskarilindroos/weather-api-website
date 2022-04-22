@@ -2,8 +2,30 @@
     color: white;
 }
 
+.fixedHeight {
+    max-height:  85vh;
+    overflow: auto;
+    padding-right: 0;
+    
+}
+
+.sticky {
+    position: sticky ;
+    top: 0 ;
+    background-color: white;
+    box-shadow: inset 0 0 black, inset 0 -1px 0 black; 
+}
+
 .form-select, label {
     margin-top: 10px;
+}
+
+.table > :not(:first-child) {
+    border-top: 0;
+  }
+
+.col-sm-2 {
+    padding-left:30px;
 }
 
 #loading {
