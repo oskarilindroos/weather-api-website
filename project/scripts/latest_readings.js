@@ -15,9 +15,9 @@ const populateTables = (weatherData) => {
         const row = document.createElement("tr");
 
         const signalColumn = document.createElement("td");
-        const valueColumn = document.createElement("td");
         const dateColumn = document.createElement("td");
         const timeColumn = document.createElement("td");
+        const valueColumn = document.createElement("td");
 
         for (let key in item.data) {
             signalColumn.innerHTML = key;
@@ -25,13 +25,13 @@ const populateTables = (weatherData) => {
         }
 
         let date = new Date(item.date_time);
-        dateColumn.innerHTML = date.toLocaleDateString();
-        timeColumn.innerHTML = date.toLocaleTimeString();
+        dateColumn.innerHTML = date.toLocaleDateString("en-us");
+        timeColumn.innerHTML = date.toLocaleTimeString("en-us");
 
         row.appendChild(signalColumn);
-        row.appendChild(valueColumn);
         row.appendChild(dateColumn);
         row.appendChild(timeColumn);
+        row.appendChild(valueColumn);
 
         tableBody.appendChild(row);
     });
