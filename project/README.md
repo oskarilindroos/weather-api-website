@@ -7,19 +7,23 @@ This website fetches data from TAMK's public weather api and displays it to the 
 | --- | ----------- |
 | Owner | Oskari Lindroos |
 | Live on | homepages.tuni.fi/oskari.a.lindroos/weather/ |
-| Last commit | 04/21/2022 |
+| Last commit | 04/24/2022 |
 
 ## Changelog
 
+### 04/23/2022
+
+* added scrollbar to all tables with a chart next to them
+
 ### 04/21/2022
 
-* change all api requests to https
-* add loading animation
-* add variable weather data
-* update nav links
-* add light data
-* add temperature data
+* changed all api requests to https
+* added loading animation
+* added variable weather data
+* updated nav links
+* added light data
+* added temperature data
 
 ### 04/13/2022
 
-* add latest weather data
+* added latest weather data
